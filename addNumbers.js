@@ -12,17 +12,19 @@
 //how to add multiple numbers together.
 
 //return/console.logged(totalNumber)
-console.log(process.argv) // argv after 2nd element is what I write to my command. compiling my file!
+// argv after 2nd element is what I write to my command. compiling my file!
 
 //how do I go throught the list of numbers?(looping)
 //how to add numbers?
 
-let sum = 0
-for (let i = 2; i < process.argv.length; i++) {
-  console.log('i =', i);
-  console.log(process.argv[i]);
+let sum = 0;
+const array = process.argv.splice(2);
+
+
+for (let i = 0; i < array.length; i++) { ///TODO: find a cleaner way to i = 2;
   //gotta convert the string recieved from terminal to a number.
-  sum = sum + Number(process.argv[i]);
+  sum = sum + Number(array[i]);
 }
+//Make a function to keep everthing clean.
 
 console.log("the value is ", sum);
